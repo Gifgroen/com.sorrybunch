@@ -87,7 +87,8 @@ USE_SOUTH = True
 # In the format (('Full Name', 'email@example.com'),
 #                ('Full Name', 'anotheremail@example.com'))
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+	('Karsten Westra', 'karstenwestra@gmail.com'),
+	('Pelle Kuipers', 'info@sorrybunch.com'),
 )
 MANAGERS = ADMINS
 
@@ -326,7 +327,7 @@ FABRIC = {
     "LIVE_HOSTNAME": "sorrybunch.gifgroen.com", # Host for public site.
     "REPO_URL": "git-karsten@playground.gifgroen.com:comsorrybunch.git", # Git or Mercurial remote repo URL for the project
     "DB_PASS": "s0RRyBun(h", # Live database password
-    "ADMIN_PASS": "klopgeest", # Live admin user password
+    "ADMIN_PASS": "", # Live admin user password
 }
 
 
