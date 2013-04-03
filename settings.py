@@ -218,6 +218,10 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 # Don't forget to use absolute paths, not relative paths.
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 
+ALLOWED_HOSTS = [
+	'sorrybunch.com',
+	'localhost',
+]
 
 ################
 # APPLICATIONS #
@@ -309,21 +313,21 @@ DEBUG_TOOLBAR_CONFIG = {"INTERCEPT_REDIRECTS": False}
 # These settings are used by the default fabfile.py provided.
 # Check fabfile.py for defaults.
 
-# FABRIC = {
-#     "SSH_USER": "", # SSH username
-#     "SSH_PASS":  "", # SSH password (consider key-based authentication)
-#     "SSH_KEY_PATH":  "", # Local path to SSH key file, for key-based auth
-#     "HOSTS": [], # List of hosts to deploy to
-#     "VIRTUALENV_HOME":  "", # Absolute remote path for virtualenvs
-#     "PROJECT_NAME": "", # Unique identifier for project
-#     "REQUIREMENTS_PATH": "", # Path to pip requirements, relative to project
-#     "GUNICORN_PORT": 8000, # Port gunicorn will listen on
-#     "LOCALE": "en_US.UTF-8", # Should end with ".UTF-8"
-#     "LIVE_HOSTNAME": "www.example.com", # Host for public site.
-#     "REPO_URL": "", # Git or Mercurial remote repo URL for the project
-#     "DB_PASS": "", # Live database password
-#     "ADMIN_PASS": "", # Live admin user password
-# }
+FABRIC = {
+    "SSH_USER": "me", # SSH username
+    "SSH_PASS":  "", # SSH password (consider key-based authentication)
+    "SSH_KEY_PATH":  "/Users/karsten/.ssh/id_rsa.pub", # Local path to SSH key file, for key-based auth
+    "HOSTS": ["sorrybunch.gifgroen.com"], # List of hosts to deploy to
+    "VIRTUALENV_HOME":  "/home/me/.virtualenvs", # Absolute remote path for virtualenvs
+    "PROJECT_NAME": "sorrybunchcom", # Unique identifier for project
+    "REQUIREMENTS_PATH": "requirements/project.txt", # Path to pip requirements, relative to project
+    "GUNICORN_PORT": 8000, # Port gunicorn will listen on
+    "LOCALE": "en_US.UTF-8", # Should end with ".UTF-8"
+    "LIVE_HOSTNAME": "sorrybunch.gifgroen.com", # Host for public site.
+    "REPO_URL": "git-karsten@playground.gifgroen.com:comsorrybunch.git", # Git or Mercurial remote repo URL for the project
+    "DB_PASS": "s0RRyBun(h", # Live database password
+    "ADMIN_PASS": "klopgeest", # Live admin user password
+}
 
 
 ##################
