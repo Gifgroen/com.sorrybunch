@@ -323,7 +323,7 @@ FABRIC = {
     "VIRTUALENV_HOME":  "/home/me/.virtualenvs", # Absolute remote path for virtualenvs
     "PROJECT_NAME": "sorrybunchcom", # Unique identifier for project
     "REQUIREMENTS_PATH": "requirements/project.txt", # Path to pip requirements, relative to project
-    "GUNICORN_PORT": 8000, # Port gunicorn will listen on
+    "GUNICORN_PORT": 8001, # Port gunicorn will listen on
     "LOCALE": "en_US.UTF-8", # Should end with ".UTF-8"
     "LIVE_HOSTNAME": "sorrybunch.gifgroen.com", # Host for public site.
     "REPO_URL": "git-karsten@playground.gifgroen.com:comsorrybunch.git", # Git or Mercurial remote repo URL for the project
