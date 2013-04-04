@@ -220,6 +220,7 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 
 ALLOWED_HOSTS = [
+	'sorrybunch.gifgroen.com',
 	'sorrybunch.com',
 	'localhost',
 ]
@@ -324,7 +325,7 @@ FABRIC = {
     "REQUIREMENTS_PATH": "requirements/project.txt", # Path to pip requirements, relative to project
     "GUNICORN_PORT": 8000, # Port gunicorn will listen on
     "LOCALE": "en_US.UTF-8", # Should end with ".UTF-8"
-    "LIVE_HOSTNAME": "gifgroen.com", # Host for public site.
+    "LIVE_HOSTNAME": "sorrybunch.gifgroen.com", # Host for public site.
     "REPO_URL": "git-karsten@playground.gifgroen.com:comsorrybunch.git", # Git or Mercurial remote repo URL for the project
     "DB_PASS": "s0RRyBun(h", # Live database password
     "ADMIN_PASS": "klopgeest", # Live admin user password
