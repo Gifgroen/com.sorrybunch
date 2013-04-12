@@ -1,0 +1,42 @@
+#page-header {
+	/*border: 1px solid green;*/
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50%;
+}
+
+#contacts {
+	/*border: 1px solid red;*/
+	margin-top: 25px;
+}
+
+.entry {
+	/*border: 1px solid white;*/
+	display: block;
+	margin-top: 30px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 90%;
+	text-align: center;
+}
+
+table {
+	/*border: 1px dashed red;*/
+	margin-right: auto;
+	margin-left: auto;
+}
+
+div.social_container {
+	display: block;
+	margin-top: 50px;
+	margin-left:auto;
+	margin-right: auto;
+	width: 100%;
+	text-align: center;
+}
+
+div.social_container img {
+	border: 0;
+    width: 13%;
+}

@@ -4,6 +4,7 @@ from django.contrib import admin
 
 from mezzanine.core.views import direct_to_template
 
+from home import views
 
 admin.autodiscover()
 
@@ -26,6 +27,7 @@ urlpatterns = patterns("",
     # commented out like the others, so it's the default. You only need
     # one homepage pattern, so if you use a different one, comment this
     # one out.
+	url("^$",  views.index),
 
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
 
@@ -60,6 +62,7 @@ urlpatterns = patterns("",
     # ``mezzanine.urls`` INCLUDES A *CATCH ALL* PATTERN
     # FOR PAGES, SO URLPATTERNS ADDED BELOW ``mezzanine.urls``
     # WILL NEVER BE MATCHED!
+
 
     # If you'd like more granular control over the patterns in
     # ``mezzanine.urls``, go right ahead and take the parts you want

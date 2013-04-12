@@ -1,0 +1,20 @@
+#page-pointer {
+	/*border: 1px solid green;*/
+	display: block;
+	margin-left: auto;
+	margin-top: 20%;
+	margin-right: auto;
+}
+
+#book_them {
+	text-align: center;
+	margin-top: 300px;
+}
+
+#book_them img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30%;
+    border: 0;
+}
