@@ -7,6 +7,7 @@ from mezzanine.core.views import direct_to_template
 import home.views
 import photos.views
 import contact.views
+import booker.views
 
 admin.autodiscover()
 
@@ -32,6 +33,7 @@ urlpatterns = patterns("",
 	url("^$",  home.views.index),
     url("^photos$", photos.views.index),
     url("^contact$", contact.views.index),
+    url("^booker$", booker.views.index),
 
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
 
