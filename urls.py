@@ -8,6 +8,7 @@ import home.views
 import photos.views
 import contact.views
 import booker.views
+import video.views
 
 admin.autodiscover()
 
@@ -34,6 +35,7 @@ urlpatterns = patterns("",
     url("^photos$", photos.views.index),
     url("^contact$", contact.views.index),
     url("^booker$", booker.views.index),
+    url("^video$", video.views.index),
 
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
 
