@@ -9,6 +9,8 @@ import photos.views
 import contact.views
 import booker.views
 import video.views
+import bio.views
+import songs.views 
 
 admin.autodiscover()
 
@@ -25,18 +27,20 @@ urlpatterns = patterns("",
     # We don't want to presume how your homepage works, so here are a
     # few patterns you can use to set it up.
 
+    url("^$",  home.views.index),
+    url("^photos/$", photos.views.index),
+    url("^contact/$", contact.views.index),
+    url("^booker/$", booker.views.index),
+    url("^video/$", video.views.index),
+    url("^bio/$", bio.views.index),
+    url("^songs/", songs.views.index),
+
     # HOMEPAGE AS STATIC TEMPLATE
     # ---------------------------
     # This pattern simply loads the index.html template. It isn't
     # commented out like the others, so it's the default. You only need
     # one homepage pattern, so if you use a different one, comment this
     # one out.
-	url("^$",  home.views.index),
-    url("^photos$", photos.views.index),
-    url("^contact$", contact.views.index),
-    url("^booker$", booker.views.index),
-    url("^video$", video.views.index),
-
     url("^$", direct_to_template, {"template": "index.html"}, name="home"),
 
     # HOMEPAGE AS AN EDITABLE PAGE IN THE PAGE TREE
