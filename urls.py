@@ -11,6 +11,7 @@ import booker.views
 import video.views
 import bio.views
 import songs.views 
+import newsandgigs.views
 
 admin.autodiscover()
 
@@ -34,6 +35,8 @@ urlpatterns = patterns("",
     url("^video/$", video.views.index),
     url("^bio/$", bio.views.index),
     url("^songs/", songs.views.index),
+    url("^news/", newsandgigs.views.news),
+    url("^gigs/", newsandgigs.views.gigs),
 
     # HOMEPAGE AS STATIC TEMPLATE
     # ---------------------------
@@ -102,5 +105,5 @@ urlpatterns = patterns("",
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
 # pages can use JS, CSS and images.
-handler404 = "mezzanine.core.views.page_not_found"
+handler404 = "home.views.page_not_found"
 handler500 = "mezzanine.core.views.server_error"
