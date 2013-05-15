@@ -12,12 +12,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'sorrybunch.db',                # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'sorrybunchcom',                # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
+        'USER': 'me',
+        'PASSWORD': 's0rryBun(h)',
+        'HOST': 'localhost',             # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
 }
@@ -26,7 +26,7 @@ DATABASES = {
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
 ALLOWED_HOSTS = [
 	'sorrybunch.gifgroen.com',
-	'sorrybunch.com',
+#	'sorrybunch.com',
 	'localhost',
 ]
 
@@ -144,29 +144,6 @@ INSTALLED_APPS = (
 
     'website',
 )
-
-###################
-# DEPLOY SETTINGS #
-###################
-
-# These settings are used by the default fabfile.py provided.
-# Check fabfile.py for defaults.
-
-FABRIC = {
-    "SSH_USER": "me", # SSH username
-    "SSH_PASS":  "", # SSH password (consider key-based authentication)
-    "SSH_KEY_PATH":  "/Users/karsten/.ssh/id_rsa.pub", # Local path to SSH key file, for key-based auth
-    "HOSTS": ["sorrybunch.gifgroen.com"], # List of hosts to deploy to
-    "VIRTUALENV_HOME":  "/home/me/.virtualenvs", # Absolute remote path for virtualenvs
-    "PROJECT_NAME": "sorrybunchcom", # Unique identifier for project
-    "REQUIREMENTS_PATH": "requirements/project.txt", # Path to pip requirements, relative to project
-    "GUNICORN_PORT": 8001, # Port gunicorn will listen on
-    "LOCALE": "en_US.UTF-8", # Should end with ".UTF-8"
-    "LIVE_HOSTNAME": "sorrybunch.gifgroen.com", # Host for public site.
-    "REPO_URL": "git-karsten@playground.gifgroen.com:comsorrybunch.git", # Git or Mercurial remote repo URL for the project
-    "DB_PASS": "s0RRyBun(h", # Live database password
-    "ADMIN_PASS": "me sorrybunch com", # Live admin user password
-}
 
 # A sample logging configuration. The only tangible logging
 # performed by this configuration is to send an email to
