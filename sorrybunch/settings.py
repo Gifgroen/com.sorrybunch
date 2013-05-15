@@ -159,7 +159,7 @@ FABRIC = {
     "HOSTS": ["sorrybunch.gifgroen.com"], # List of hosts to deploy to
     "VIRTUALENV_HOME":  "/home/me/.virtualenvs", # Absolute remote path for virtualenvs
     "PROJECT_NAME": "sorrybunchcom", # Unique identifier for project
-    "REQUIREMENTS_PATH": "../requirements/project.txt", # Path to pip requirements, relative to project
+    "REQUIREMENTS_PATH": "requirements/project.txt", # Path to pip requirements, relative to project
     "GUNICORN_PORT": 8001, # Port gunicorn will listen on
     "LOCALE": "en_US.UTF-8", # Should end with ".UTF-8"
     "LIVE_HOSTNAME": "sorrybunch.gifgroen.com", # Host for public site.
