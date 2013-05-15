@@ -3,7 +3,7 @@ $(function() {
 		"video": "VideoIII.png",
 		"songs": "SongsII.png",
 		"bio": "Bio.png",
-		"newsandgigs": "NewsAndGigs.png",
+		"newsandgigs": "Newsandgigs.png",
 		"booker": "BookersNew.png",
 		"contact": "Contact.png",
 		"photos": "Photos.png"
