@@ -23,7 +23,7 @@ urlpatterns = patterns('',
     url("^video/$", views.video),
     url("^bio/$", views.bio),
     url("^songs/", views.songs),
-    url("^news/", views.news),
+    url("^news/", include('website.urls')),
     url("^gigs/", views.gigs),
 )
 
