@@ -53,3 +53,8 @@ def make_audio_active(sender, **kwargs):
 	audio.active = True	
 
 pre_save.connect(make_audio_active, sender = Audio)
+
+class Bio(models.Model):
+	lang_short = models.CharField(max_length = 4, unique = True)
+	lang_verbose = models.CharField(max_length = 32)
+	body = models.TextField(max_length = 512)

@@ -37,27 +37,20 @@
 	<a href="/"><img id="back" src="{% static 'images/Back_HKlein.png' %}" alt="Ga terug" /></a>
 	<img id="page-header" src="{% static 'images/BioSmall.png' %}" alt="" />
 	<div id="biography">
-		<div id="lang_nl" class="lang" style="display: block;">
-            <p>
-				<br />Als het graf van Chopin in het Gooi had gelegen was dit duo eruit gekropen. Gewapend met piano, zang en drums zijn Pelle en Jos klaar om mensen te laten horen dat de piano niet alleen voor klassieke muziek bestemd is. <br />
-				Met Dresden Dolls, Nick Cave en Danny Elfman als invloed en muzikaal net zo sterke live shows laat dit <b>zielige zootje</b> weer eens wat nieuws horen in muzikaal Nederland. <br /><br />
-
-				Sorry Bunch heeft de demo Three Line Poem uitgebracht en de Ep is net uit. Ze deden in 2011 mee met het <b>NH POP showcasetraject</b> , stonden al op <b>de Hollandse Nieuwe van de 3voor12 Luisterpaal</b> en speelden het afgelopen jaar in zalen zoals <b>Romein, Simplon, Victorie, Manifesto en P3.</b> <br />
-				In de zomer speelden ze op festivals zoals de <b>Uitmarkt</b> en </b>Over Het IJ Festival</b>, waarbij tien dagen lang een show werd opgevoerd met theatrale aspecten en muziek speciaal geschreven voor het festival.
-            </p>
-		</div>
-		<div id="lang_en" class="lang" style="display: none;">
-            <p>
-				If the grave of Chopin would be in Amsterdam, this duo would have dug themselves out of it. Pelle and Jos come armed with piano, vocals and drums to show everyone that piano can be used for much more than only classical music. <br />
-				With influences like Dresden Dolls, Nick Cave, Danny Elfman, rocking drums, and strong live shows, this <b>Pop Noir duo</b> shows that there are still new paths to be threaded. <br /><br />
-
-				Sorry Bunch has released their demo Three Line Poem, and their Ep will be out this summer. They were selected for the <b>NH POP showcase</b> , were featured on <b>3 voor 12 Hollandse Nieuwe</b>, and played at venues such as <b>Romein, Simplon, Victorie and Manifesto</b>. Last summer they played at the <b>Uitmarkt</b> and <b>Over het IJ festival</b>. For Over het IJ they created a unique show with music specifically written for the festival.
-            </p>
-		</div>
+		{% for bio in bios %}
+			<div id="lang_{{bio.lang_short}}" class="lang" style="display: {% if forloop.first %} block {% else %} none{% endif %};">
+	            <p>
+	            	{% autoescape off %}
+						{{bio.body}}
+					{% endautoescape %}
+	            </p>
+			</div>
+		{% endfor %}
 	</div>
 	<div id="btns">
-		<img class="lang_btn" name="nl" src="{% static 'images/nl.jpg' %}" alt="nederlands">
-		<img class="lang_btn" name="en" src="{% static 'images/en.jpg' %}" alt="english">
+		{% for bio in bios %}
+			<img class="lang_btn" name="{{bio.lang_short}}" src="{% static 'images/'|add:bio.lang_short|add:'.jpg' %}" alt="{{bio.lang_verbose}}">
+		{% endfor %}
 	</div>
 </div>
 {% endblock %}

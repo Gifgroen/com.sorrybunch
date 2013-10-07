@@ -4,7 +4,7 @@ from django.template import Context, loader
 
 from django.shortcuts import render_to_response
 
-from website.models import Article, Gig, Video, Audio
+from website.models import Article, Gig, Video, Audio, Bio
 
 def index(request):
 	return render_to_response('home.html', '', {})
@@ -27,7 +27,12 @@ def video(request):
 	return HttpResponse(template.render(context))
 
 def bio(request):
-	return render_to_response('bio.html', '', {})
+	bios = Bio.objects.all()
+	template = loader.get_template('bio.html')
+	context = Context({
+		'bios': bios,
+	})
+	return HttpResponse(template.render(context))
 
 def songs(request):
 	song = Audio.objects.filter(active = True)
