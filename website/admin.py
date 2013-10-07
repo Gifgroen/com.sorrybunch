@@ -17,7 +17,7 @@ class VideoAdmin(admin.ModelAdmin):
 	list_display = ('video_id', 'active', 'width', 'height', )
 
 class AudioAdmin(admin.ModelAdmin):
-	list_display = ('album_id', 'bandcamp_url', 'link',  'width', 'height',)
+	list_display = ('album_id', 'active', 'bandcamp_url', 'link',  'width', 'height',)
 
 class BioAdmin(admin.ModelAdmin):
 	list_display = ('lang_short', 'lang_verbose', 'body')
