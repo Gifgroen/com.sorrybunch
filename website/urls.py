@@ -7,5 +7,5 @@ admin.autodiscover()
 from website import views
 
 urlpatterns = patterns('',
-	url(r'^$', views.news, name='news'),
+	# url(r'^$', views.news, name='news'),
 )
