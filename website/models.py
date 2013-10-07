@@ -33,3 +33,23 @@ def make_video_active(sender, **kwargs):
 	video.active = True
 
 pre_save.connect(make_video_active, sender = Video)
+
+class Audio(models.Model):
+	album_id = models.CharField(max_length = 16)
+	bandcamp_url = models.URLField()
+	link = models.CharField(max_length = 256)
+	width = models.IntegerField()
+	height = models.IntegerField()
+	active = models.BooleanField(default = True, editable = False)
+
+def make_audio_active(sender, **kwargs):
+	pre_save.disconnect(make_audio_active, sender = Audio)
+	old_songs = Audio.objects.filter(active = True)
+	for s in old_songs:
+		s.active = False
+		s.save()
+	pre_save.connect(make_audio_active, sender = Audio)
+	audio = kwargs['instance']
+	audio.active = True	
+
+pre_save.connect(make_audio_active, sender = Audio)

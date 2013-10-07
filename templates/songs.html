@@ -24,11 +24,15 @@
 	<a href="/"><img id="back" src="{% static 'images/Back_HKlein.png' %}" alt="Ga terug" /></a>
 	<img id="page-pointer" src="{% static 'images/SongsII.png' %}" alt="" />
 	<div id="mp3_player">
-        <iframe width="300" height="310" style="position: relative; display: block; width: 300px; height: 310px;" src="http://bandcamp.com/EmbeddedPlayer/v=2/album=4096255648/size=grande3/bgcol=FFFFFF/linkcol=481505/transparent=true/"
-                allowtransparency="true"
-                frameborder="0">
-                    <a href="http://sorrybunch.bandcamp.com/album/sorry-bunch-2">Sorry bunch</a>
-        </iframe>
+		{% if song %}
+	        <iframe width="{{song.0.width}}" height="{{song.0.height}}" style="position: relative; display: block; width: {{song.0.width}}px; height: {{song.0.height}}px;" src="http://bandcamp.com/EmbeddedPlayer/v=2/album={{song.0.album_id}}/size=grande3/bgcol=FFFFFF/linkcol=481505/transparent=true/"
+	                allowtransparency="true"
+	                frameborder="0">
+	                    <a href="{{song.0.bandcamp_url}}">{{song.0.link}}</a>
+	        </iframe>
+	    {% else %}
+	    	No song!
+        {% endif %}
 	</div>
 </div>
 {% endblock %}
