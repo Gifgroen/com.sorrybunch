@@ -4,7 +4,7 @@ from django.template import Context, loader
 
 from django.shortcuts import render_to_response
 
-from website.models import Article, Gig, Video
+from website.models import Article, Gig, Video, Audio
 
 def index(request):
 	return render_to_response('home.html', '', {})
@@ -30,7 +30,12 @@ def bio(request):
 	return render_to_response('bio.html', '', {})
 
 def songs(request):
-	return render_to_response('songs.html', '', {})
+	song = Audio.objects.filter(active = True)
+	template = loader.get_template('songs.html')
+	context = Context({
+		'song': song,
+	})
+	return HttpResponse(template.render(context))
 	
 def news(request):
 	latest_news_list = Article.objects.order_by('-placed')[:1]
