@@ -25,22 +25,21 @@
     
     <div id="newsitem">
 		{% for article in latest_news_list %}
-
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title">{{ article.title }}</h1>
-					</header>
-					<div class="entry-content">
-						<p>Geplaatst op {{  article.placed|date:"l j F o" }} door 
-						{% if article.author.first_name %}
-							{{  article.author.first_name }}
-						{% else %}
-							{{  article.author.username }}
-						{% endif %}
-						</p>
-						<p>{{ article.body }}</p>
-					</div>
-		    </div>
+			<article id="post-0" class="post no-results not-found">
+				<header class="entry-header">
+					<h1 class="entry-title">{{ article.title }}</h1>
+				</header>
+				<div class="entry-content">
+					<p>Geplaatst op {{  article.placed|date:"l j F o" }} door 
+					{% if article.author.first_name %}
+						{{  article.author.first_name }}
+					{% else %}
+						{{  article.author.username }}
+					{% endif %}
+					</p>
+					<p>{{ article.body }}</p>
+				</div>
+	    	</article>
 		{% endfor %}
 	</div>
 </div>

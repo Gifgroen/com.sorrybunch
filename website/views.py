@@ -4,7 +4,7 @@ from django.template import Context, loader
 
 from django.shortcuts import render_to_response
 
-from website.models import Article, Gig
+from website.models import Article, Gig, Video
 
 def index(request):
 	return render_to_response('home.html', '', {})
@@ -19,7 +19,12 @@ def booker(request):
 	return render_to_response('booker.html', '', {})
 		
 def video(request):
-	return render_to_response('video.html', '', {})
+	videos = Video.objects.filter(active = True)
+	template = loader.get_template('video.html')
+	context = Context({
+		'videos': videos,
+	})
+	return HttpResponse(template.render(context))
 
 def bio(request):
 	return render_to_response('bio.html', '', {})
@@ -36,6 +41,7 @@ def news(request):
 	return HttpResponse(template.render(context))
 
 def gigs(request):
+	print " Rendering! "
 	gigs_list = Gig.objects.order_by('-date')
 	template = loader.get_template('gigs.html')
 	context = Context({

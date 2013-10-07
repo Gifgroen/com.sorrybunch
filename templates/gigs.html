@@ -24,28 +24,28 @@
 	<br />
 
 	<div id="gig-container">
-		{% if gigs_list %}
-			<table cellspacing="8">
-				<thead>
+		<table cellspacing="8">
+			<thead>
+				<tr>
+					<td><b>Naam</b></td>
+					<td><b>Locatie</b></td>
+					<td><b>Datum</b></td>
+				</tr>
+			</thead>
+			<tbody>
+				{% for gig in gigs_list %}
 					<tr>
-						<td><b>Naam</b></td>
-						<td><b>Locatie</b></td>
-						<td><b>Datum</b></td>
+						<td>{{gig.name}}</td>
+						<td><a href="{{gig.link}}">{{gig.place}}</a></td>
+						<td>{{gig.date|date:"j-m-y"}}</td>
 					</tr>
-				</thead>
-				<tbody>
-					{% for gig in gigs_list %}
-						<tr>
-							<td>{{gig.name}}</td>
-							<td><a href="{{gig.link}}">{{gig.place}}</a></td>
-							<td>{{gig.date|date:"j F y"}}</td>
-						</tr>
-					{% endfor %}
-				</tbody>
-			</table>
-		{% else %}
-			Er zijn geen gigs
-		{% endif %}
+				{% empty %}
+					<tr>
+						<td>Geen gigs gevonden</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
 	</div>
 </div>
 {% endblock %}
